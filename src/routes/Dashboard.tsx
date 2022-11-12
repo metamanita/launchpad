@@ -9,6 +9,7 @@ import {
     StatNumber,
     useColorModeValue,
 } from '@chakra-ui/react';
+import Balance from "../components/Balance";
 
 interface StatsCardProps {
     title: string;
@@ -56,6 +57,7 @@ export default function Dashboard(Props: any) {
                 <StatsCard title={'Your Balance'} stat={etherBalance && parseFloat(formatEther(etherBalance)).toFixed(3)} />
                 <StatsCard title={'Gas Price in gwei'} stat={gasPrice && parseFloat(formatUnits(gasPrice, 'gwei')).toFixed(3)} />
             </SimpleGrid>
+            <Balance chainId={'1'} address={'demo.eth'}></Balance>
         </Box>
     )
 }
