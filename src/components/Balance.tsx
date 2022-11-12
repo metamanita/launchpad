@@ -1,4 +1,4 @@
-import { Button, useColorMode, Text, Image, TableContainer, Table, TableCaption, Thead, Tr, Th, Tbody, Td, } from "@chakra-ui/react";
+import {  Image, TableContainer, Table, TableCaption, Thead, Tr, Th, Tbody, Td, } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import axios from 'axios'
 
@@ -17,7 +17,7 @@ export default function Balance(Props: BalanceRequest) {
             .then((response) => {
                 setBalance(response?.data.data.items)
             }).catch((error) => { console.log("error in axios") })
-    }, [])
+    }, [url])
 
     if (!balance) return null;
 
@@ -41,9 +41,6 @@ export default function Balance(Props: BalanceRequest) {
                                     <Td>{item?.contract_name}</Td>
                                     <Td>{item?.balance / (10**item?.contract_decimals)}</Td>
                                 </Tr>
-                                // <div key={index}>
-                                //     <p>{item?.contract_name}</p>
-                                // </div>
                             );
                         }).sort()}
                     </Tbody>
