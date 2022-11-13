@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Routes,Route } from 'react-router-dom'
 const Welcome = React.lazy(() => import('./routes/Welcome'));
 const Dashboard = React.lazy(() => import('./routes/Dashboard'));
-const ContractInteraction = React.lazy(() => import('./routes/ContractInteraction'));
+const DeployCollection = React.lazy(() => import('./routes/DeployCollection'));
 const About = React.lazy(() => import('./routes/About'));
 const Team = React.lazy(() => import('./routes/Team'));
 
@@ -14,7 +14,7 @@ return (
     <Route path='/' element={<Welcome/>} />
       <Route path='/welcome' element={<Welcome/>} />
       <Route path='/dashboard' element={<Dashboard/>} />
-      <Route path='/contract' element={<ContractInteraction/>} />
+      <Route path='/deploy' element={<DeployCollection/>} />
       <Route path='/about' element={<About/>} />
       <Route path='/team' element={<Team/>} />
     </Routes>

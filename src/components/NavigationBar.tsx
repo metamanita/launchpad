@@ -42,7 +42,7 @@ interface LinkItemProps {
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Welcome', icon: FiHome, route: '/welcome' },
   { name: 'Dashboard', icon: FiTrendingUp, route: '/dashboard'  },
-  { name: 'Contract', icon: FiCommand, route: '/contract' },
+  { name: 'NFT Launcher', icon: FiCommand, route: '/deploy' },
   { name: 'About', icon: FiBookOpen, route: '/about' },
   { name: 'Team', icon: FiUsers, route: '/team' },
 ];

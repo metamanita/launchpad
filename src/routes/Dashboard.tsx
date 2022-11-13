@@ -38,10 +38,10 @@ function StatsCard(props: StatsCardProps) {
 export default function Dashboard(Props: any) {
     const { account, chainId, } = useEthers()
     const etherBalance = useEtherBalance(account)
-    const chainMeta = useChainMeta(chainId as ChainId)
+    // const chainMeta = useChainMeta(chainId as ChainId)
     const gasPrice = useGasPrice()
 
-    console.log(chainMeta.nativeCurrency?.name)
+    // console.log(chainMeta.nativeCurrency?.name)
     return ( 
         
         <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
@@ -53,11 +53,11 @@ export default function Dashboard(Props: any) {
                 Dashboard
             </chakra.h1>
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
-                <StatsCard title={'Network'} stat={chainMeta.chainName} />
-                <StatsCard title={'Your Balance'} stat={etherBalance && parseFloat(formatEther(etherBalance)).toFixed(3)} />
-                <StatsCard title={'Gas Price in gwei'} stat={gasPrice && parseFloat(formatUnits(gasPrice, 'gwei')).toFixed(3)} />
+                {/* <StatsCard title={'Network'} stat={chainMeta?.chainName} /> */}
+                {/* <StatsCard title={'Your Balance'} stat={etherBalance && parseFloat(formatEther(etherBalance)).toFixed(3)} /> */}
+                {/* <StatsCard title={'Gas Price in gwei'} stat={gasPrice && parseFloat(formatUnits(gasPrice, 'gwei')).toFixed(3)} /> */}
             </SimpleGrid>
-            <Balance chainId={'1'} address={'demo.eth'}></Balance>
+            <Balance chainId={chainId?chainId.toString():'1'} address={account?account:'demo.eth'}></Balance>
         </Box>
     )
 }

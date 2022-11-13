@@ -16,6 +16,7 @@ const config: Config = {
   readOnlyUrls: {
     [Polygon.chainId]: process.env.REACT_APP_POLYGON_PROVIDER as string,
     [Mumbai.chainId]: process.env.REACT_APP_MUMBAI_PROVIDER as string,
+    '9001': process.env.REACT_APP_EVMOS_TESTNET_PROVIDER as string,
   },
   pollingInterval: 100000
 }
