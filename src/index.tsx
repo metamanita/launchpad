@@ -6,8 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { ColorModeScript } from '@chakra-ui/react'
 import theme from './theme';
 
-import { Mainnet, DAppProvider, Config, Goerli, Mumbai, Polygon } from '@usedapp/core'
-import { getDefaultProvider } from 'ethers'
+import { DAppProvider, Config, Mumbai, Polygon } from '@usedapp/core'
 
 console.log(process.env.REACT_APP_POLYGON_PROVIDER)
 
