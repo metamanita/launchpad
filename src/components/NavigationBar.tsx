@@ -29,7 +29,10 @@ import {
   FiCommand,
   FiBookOpen,
   FiUsers,
+  FiShoppingBag,
+  FiShoppingCart,
 } from 'react-icons/fi';
+import { GiSuperMushroom } from 'react-icons/gi'
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
 import ConnectButton from './ConnectButton';
@@ -43,6 +46,9 @@ const LinkItems: Array<LinkItemProps> = [
   { name: 'Welcome', icon: FiHome, route: '/welcome' },
   { name: 'Dashboard', icon: FiTrendingUp, route: '/dashboard'  },
   { name: 'NFT Launcher', icon: FiCommand, route: '/deploy' },
+  { name: 'NFT Minter', icon: FiShoppingBag, route: '/minter' },
+  { name: 'NFT Market', icon: FiShoppingCart, route: '/market' },
+  { name: 'Metamanita: the Game ', icon: GiSuperMushroom, route: '/market' },
   { name: 'About', icon: FiBookOpen, route: '/about' },
   { name: 'Team', icon: FiUsers, route: '/team' },
 ];

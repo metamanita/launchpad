@@ -18,7 +18,7 @@ const config: Config = {
     [Mumbai.chainId]: process.env.REACT_APP_MUMBAI_PROVIDER as string,
     '9001': process.env.REACT_APP_EVMOS_TESTNET_PROVIDER as string,
   },
-  pollingInterval: 100000
+  pollingInterval: 10000
 }
 
 const root = ReactDOM.createRoot(

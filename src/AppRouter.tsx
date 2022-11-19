@@ -1,5 +1,7 @@
 import * as React from 'react';
 import {Routes,Route } from 'react-router-dom'
+import ComingSoon from './components/ComingSoon';
+import NFTMinter from './routes/NFTMinter';
 const Welcome = React.lazy(() => import('./routes/Welcome'));
 const Dashboard = React.lazy(() => import('./routes/Dashboard'));
 const DeployCollection = React.lazy(() => import('./routes/DeployCollection'));
@@ -15,6 +17,8 @@ return (
       <Route path='/welcome' element={<Welcome/>} />
       <Route path='/dashboard' element={<Dashboard/>} />
       <Route path='/deploy' element={<DeployCollection/>} />
+      <Route path='/minter' element={<NFTMinter/>} />
+      <Route path='/market' element={<ComingSoon/>} />
       <Route path='/about' element={<About/>} />
       <Route path='/team' element={<Team/>} />
     </Routes>
