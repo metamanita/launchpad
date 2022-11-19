@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Routes,Route } from 'react-router-dom'
 import ComingSoon from './components/ComingSoon';
-import NFTMinter from './routes/NFTMinter';
+import NFTMinter from './routes/NFTMinter/NFTMinter';
 const Welcome = React.lazy(() => import('./routes/Welcome'));
 const Dashboard = React.lazy(() => import('./routes/Dashboard'));
 const DeployCollection = React.lazy(() => import('./routes/DeployCollection'));

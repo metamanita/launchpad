@@ -1,6 +1,5 @@
 import { Box, chakra, Text } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { CollectionBrowser } from "./NFTMinter/CollectionBrowser";
+import { CollectionBrowser } from "./CollectionBrowser";
 
 
 
