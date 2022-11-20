@@ -9,7 +9,7 @@ import {
     StatNumber,
     useColorModeValue,
 } from '@chakra-ui/react';
-import Balance from "../components/Balance";
+import Balance from "./Balance";
 
 interface StatsCardProps {
     title: string;

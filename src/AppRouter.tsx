@@ -3,7 +3,7 @@ import {Routes,Route } from 'react-router-dom'
 import ComingSoon from './components/ComingSoon';
 import NFTMinter from './routes/NFTMinter/NFTMinter';
 const Welcome = React.lazy(() => import('./routes/Welcome'));
-const Dashboard = React.lazy(() => import('./routes/Dashboard'));
+const Dashboard = React.lazy(() => import('./routes/dashboard/Dashboard'));
 const DeployCollection = React.lazy(() => import('./routes/DeployCollection'));
 const About = React.lazy(() => import('./routes/About'));
 const Team = React.lazy(() => import('./routes/Team'));
