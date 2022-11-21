@@ -2,12 +2,12 @@ import { Box, chakra, Button } from "@chakra-ui/react";
 import { Contract } from '@ethersproject/contracts'
 import { Ether, useContractFunction } from "@usedapp/core";
 import { parseEther, parseUnits } from '@ethersproject/units'
-import myContract from "../abi/NFTCollectionFactory.json"
+import myContract from "../abi/NFTCollectionFactoryEvmos.json"
 import { useEffect } from "react";
 import DeployCollectionForm from "../components/DeployCollectionForm";
 
 export default function DeployCollection(Props: any) {
-    const contractAddress = myContract.networks["80001"].address;
+    const contractAddress = myContract.networks[9001].address;
     const contractAbi = myContract.abi;
     const contract = new Contract(contractAddress, contractAbi) as any
     // const price = '0.001'

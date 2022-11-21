@@ -27,7 +27,7 @@ import type {
   PromiseOrValue,
 } from "./common";
 
-export interface NFTCollectionFactoryInterface extends utils.Interface {
+export interface NFTCollectionFactoryEvmosInterface extends utils.Interface {
   functions: {
     "contractsList(uint256)": FunctionFragment;
     "createInstance(string,string,string,string,uint256,uint256,uint256)": FunctionFragment;
@@ -103,12 +103,12 @@ export type CollectionCreatedEvent = TypedEvent<
 export type CollectionCreatedEventFilter =
   TypedEventFilter<CollectionCreatedEvent>;
 
-export interface NFTCollectionFactory extends BaseContract {
+export interface NFTCollectionFactoryEvmos extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
 
-  interface: NFTCollectionFactoryInterface;
+  interface: NFTCollectionFactoryEvmosInterface;
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,

@@ -3,4 +3,5 @@
 /* eslint-disable */
 export { NFTCollection__factory } from "./NFTCollection__factory";
 export { NFTCollectionFactory__factory } from "./NFTCollectionFactory__factory";
+export { NFTCollectionFactoryEvmos__factory } from "./NFTCollectionFactoryEvmos__factory";
 export { SuperNFT__factory } from "./SuperNFT__factory";

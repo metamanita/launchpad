@@ -1,13 +1,13 @@
 import { useCall } from '@usedapp/core'
 
-import factory from '../../abi/NFTCollectionFactory.json'
+import factory from '../../abi/NFTCollectionFactoryEvmos.json'
 import { ethers } from "ethers";
 import CollectionPanel from './CollectionPanel';
 import { SimpleGrid } from '@chakra-ui/react';
 
 export const CollectionBrowser = () => {
 
-  const contractAddress = factory.networks[80001].address
+  const contractAddress = factory.networks[9001].address
   const contract = new ethers.Contract(contractAddress, factory.abi)
 
   const { value: contracts, error } = useCall({ contract, method: 'deployedContracts', args: [] }) ?? {}

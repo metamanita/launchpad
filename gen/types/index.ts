@@ -3,8 +3,10 @@
 /* eslint-disable */
 export type { NFTCollection } from "./NFTCollection";
 export type { NFTCollectionFactory } from "./NFTCollectionFactory";
+export type { NFTCollectionFactoryEvmos } from "./NFTCollectionFactoryEvmos";
 export type { SuperNFT } from "./SuperNFT";
 export * as factories from "./factories";
 export { NFTCollection__factory } from "./factories/NFTCollection__factory";
 export { NFTCollectionFactory__factory } from "./factories/NFTCollectionFactory__factory";
+export { NFTCollectionFactoryEvmos__factory } from "./factories/NFTCollectionFactoryEvmos__factory";
 export { SuperNFT__factory } from "./factories/SuperNFT__factory";
