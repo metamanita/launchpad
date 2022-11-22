@@ -13,9 +13,7 @@ console.log(process.env.REACT_APP_POLYGON_PROVIDER)
 const config: Config = {
   readOnlyChainId: Mumbai.chainId,
   readOnlyUrls: {
-    [Polygon.chainId]: process.env.REACT_APP_POLYGON_PROVIDER as string,
-    [Mumbai.chainId]: process.env.REACT_APP_MUMBAI_PROVIDER as string,
-    '9001': process.env.REACT_APP_EVMOS_MAINNET_PROVIDER as string,
+     '9001': process.env.REACT_APP_EVMOS_MAINNET_PROVIDER as string,
   },
   multicallAddresses: {
     [9001]: `0xcA11bde05977b3631167028862bE2a173976CA11`
