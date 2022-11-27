@@ -8,8 +8,6 @@ import theme from './theme';
 
 import { DAppProvider, Config, Mumbai, Polygon } from '@usedapp/core'
 
-console.log(process.env.REACT_APP_POLYGON_PROVIDER)
-
 const config: Config = {
   readOnlyChainId: Mumbai.chainId,
   readOnlyUrls: {

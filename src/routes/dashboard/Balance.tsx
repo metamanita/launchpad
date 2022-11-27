@@ -9,8 +9,7 @@ interface BalanceRequest {
 
 export default function Balance(Props: BalanceRequest) {
     const [balance, setBalance] = useState<any[]>([]);
-    const url = 'https://api.covalenthq.com/v1/'+ Props.chainId +'/address/' + Props.address  +'/balances_v2/?key=' + process.env.REACT_APP_COVALENT_API_KEY
-    console.log("url=", url)
+    const url = 'https://api.covalenthq.com/v1/'+ Props.chainId +'/address/' + Props.address  +'/balances_v2/?key=' + process.env.REACT_APP_COVALENT_API_KEY // +'&nft=true'
 
     useEffect(() => {
         axios.get(url)
@@ -46,6 +45,7 @@ export default function Balance(Props: BalanceRequest) {
                     </Tbody>
                 </Table>
             </TableContainer>
+
         </div>
 
     )

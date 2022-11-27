@@ -1,10 +1,12 @@
-import { Alert, Image, useColorModeValue, AlertDescription, AlertIcon, Box, Button, chakra, HStack, Link, Stack, Text, color } from "@chakra-ui/react";
+import { Alert, Image, useColorModeValue, AlertDescription, AlertIcon, Box, Button, chakra, HStack, Link, Stack, Text} from "@chakra-ui/react";
+import { Link as ReachLink } from 'react-router-dom'
 
 import { useCall, useContractFunction } from '@usedapp/core'
 import minter from '../../abi/NFTCollection.json'
 import { ethers } from "ethers";
 import { parseUnits } from "@ethersproject/units";
 import useContractUri from "./contractUri"
+import { useEffect } from "react";
 
 
 
@@ -30,14 +32,13 @@ export default function CollectionPanel(Props: any) {
     const { value: contractURI } = useCall({ contract, method: 'contractURI', args: [] }) ?? {}
 
     const { name: contractName,
-         description, 
-         image, 
-         externalLink, 
-         sellerFeeBasisPoints, 
-         feeRecipient,  
-         error, loaded } = useContractUri(contractURI)
+        description,
+        image,
+        externalLink,
+        sellerFeeBasisPoints,
+        feeRecipient,
+        error, loaded } = useContractUri(contractURI)
 
-    console.log("Returns out: ", contractName, error, loaded)
 
 
     const { state, send } = useContractFunction(contract, 'mintNFTs', {
@@ -45,14 +46,18 @@ export default function CollectionPanel(Props: any) {
         gasLimitBufferPercentage: 10,
     })
 
+    const { status } = state
+
+    useEffect(() => {
+        console.log("state changed", state.status)
+      },[state.status, status]);
+
     const mint = () => {
-        console.log("ParseEther",price)
         void send(1, { value: parseUnits(parsedPrice.toString(), "ether") })
-        // void send()
     }
 
     return (
-        <Box key={Props.key}
+        <Box 
             maxW="xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}
             border={'1px'} borderColor={'gray.700'} margin={'1'} paddingBottom={'4'}>
             <chakra.h1
@@ -74,7 +79,7 @@ export default function CollectionPanel(Props: any) {
             <Text >
                 {description}
             </Text>
-            <Image src={image.replace("ipfs://", "https://ipfs.io/ipfs/")} alt={image}>
+            <Image src={image} alt={image}>
 
             </Image>
             <HStack fontWeight={'italic'}
@@ -90,20 +95,17 @@ export default function CollectionPanel(Props: any) {
                     ❖ Mint price: {parsedPrice}
                 </Text>
                 <Text>
-                    ❖ Royalties: {parseInt(sellerFeeBasisPoints)/100}% 
+                    ❖ Royalties: {parseInt(sellerFeeBasisPoints) / 100}%
                 </Text>
             </HStack>
 
 
 
-            {(state.status === "Exception") ?
+            {(status === "Exception") ?
                 <Alert status='error' wordBreak={'break-word'} maxW="100%">
                     <AlertIcon />
                     <AlertDescription>
-                        <Link color='teal.500' href={`https://mumbai.polygonscan.com/tx/${state.receipt?.transactionHash}`} isExternal>
-                            <b>Error! </b> {state.errorMessage};
-
-                        </Link>
+                        <b>Error! </b> {state.errorMessage};
                     </AlertDescription>
                 </Alert>
                 : ""}
@@ -112,9 +114,7 @@ export default function CollectionPanel(Props: any) {
                 <Alert status='success' wordBreak={'break-word'} maxW="100%">
                     <AlertIcon />
                     <AlertDescription>
-                        <Link color='teal.500' href={`https://mumbai.polygonscan.com/tx/${state.receipt?.transactionHash}`} isExternal>
-                            <b>Success! </b>Click to see you transaction in https://mumbai.polygonscan.com/tx/{state.receipt?.transactionHash}
-                        </Link>
+                            <b>Success! </b>
                     </AlertDescription>
                 </Alert>
                 : ""}
@@ -129,6 +129,12 @@ export default function CollectionPanel(Props: any) {
                     <Text float={'right'}>
                         {(state.status !== "None") ? state.status : ""}
                     </Text>
+                    <Button
+                        colorScheme='green'>
+                        <Link as={ReachLink} to={'/browse/9001/' + contractAddress} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+                            View yours
+                        </Link>
+                    </Button>
                 </HStack>
             </Stack>
         </Box>

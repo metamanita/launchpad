@@ -10,6 +10,7 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react';
 import Balance from "./Balance";
+import NFTs from "./NFTs";
 
 interface StatsCardProps {
     title: string;
@@ -41,7 +42,6 @@ export default function Dashboard(Props: any) {
     // const chainMeta = useChainMeta(chainId as ChainId)
     const gasPrice = useGasPrice()
 
-    // console.log(chainMeta.nativeCurrency?.name)
     return ( 
         
         <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
@@ -58,6 +58,7 @@ export default function Dashboard(Props: any) {
                 {/* <StatsCard title={'Gas Price in gwei'} stat={gasPrice && parseFloat(formatUnits(gasPrice, 'gwei')).toFixed(3)} /> */}
             </SimpleGrid>
             <Balance chainId={chainId?chainId.toString():'1'} address={account?account:'demo.eth'}></Balance>
+            <NFTs chainId={chainId?chainId.toString():'1'} address={account?account:'demo.eth'}></NFTs>
         </Box>
     )
 }
