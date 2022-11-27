@@ -1,4 +1,4 @@
-import { Alert, Image, useColorModeValue, AlertDescription, AlertIcon, Box, Button, chakra, HStack, Link, Stack, Text} from "@chakra-ui/react";
+import { Alert, Image, useColorModeValue, AlertDescription, AlertIcon, Box, Button, chakra, HStack, Link, Stack, Text } from "@chakra-ui/react";
 import { Link as ReachLink } from 'react-router-dom'
 
 import { useCall, useContractFunction } from '@usedapp/core'
@@ -34,10 +34,8 @@ export default function CollectionPanel(Props: any) {
     const { name: contractName,
         description,
         image,
-        externalLink,
         sellerFeeBasisPoints,
-        feeRecipient,
-        error, loaded } = useContractUri(contractURI)
+    } = useContractUri(contractURI)
 
 
 
@@ -50,14 +48,14 @@ export default function CollectionPanel(Props: any) {
 
     useEffect(() => {
         console.log("state changed", state.status)
-      },[state.status, status]);
+    }, [state.status, status]);
 
     const mint = () => {
         void send(1, { value: parseUnits(parsedPrice.toString(), "ether") })
     }
 
     return (
-        <Box 
+        <Box
             maxW="xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}
             border={'1px'} borderColor={'gray.700'} margin={'1'} paddingBottom={'4'}>
             <chakra.h1
@@ -114,7 +112,7 @@ export default function CollectionPanel(Props: any) {
                 <Alert status='success' wordBreak={'break-word'} maxW="100%">
                     <AlertIcon />
                     <AlertDescription>
-                            <b>Success! </b>
+                        <b>Success! </b>
                     </AlertDescription>
                 </Alert>
                 : ""}
