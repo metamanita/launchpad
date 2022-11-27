@@ -23,6 +23,7 @@ export default function DeployCollectionForm({ deploy }: any) {
     const [contractURI, setContractURI] = useState('');
     const [price, setPrice] = useState('');
     const [maxPerMint, setMaxPerMint] = useState('');
+    const [network, setNetwork] = useState('')
 
     return (
         <Flex
@@ -44,10 +45,12 @@ export default function DeployCollectionForm({ deploy }: any) {
                     p={8}>
                     <Stack spacing={4}>
                         <FormControl id="collection">
-                        <FormLabel>Network</FormLabel>
-                            <Select placeholder='Select network'>
+                            <FormLabel>Network</FormLabel>
+                            <Select placeholder='Select network'
+                                onChange={(e) => setNetwork(e.target.value)}
+                                value={'9001'}>
                                 <option disabled={true} value='80001'>Polygon Mumbai</option>
-                                <option selected={true} value='evmos_9000-4'>Evmos</option>
+                                <option value='9001'>Evmos</option>
                             </Select>
 
                             <FormLabel>Token Name:</FormLabel>
