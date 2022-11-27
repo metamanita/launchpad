@@ -14,7 +14,7 @@ const config: Config = {
     '9001': process.env.REACT_APP_EVMOS_MAINNET_PROVIDER as string,
   },
   multicallAddresses: {
-    [9001]: `0xcA11bde05977b3631167028862bE2a173976CA11`
+    '9001': `0xcA11bde05977b3631167028862bE2a173976CA11`
   },
   multicallVersion: 2,
   pollingInterval: 10000
