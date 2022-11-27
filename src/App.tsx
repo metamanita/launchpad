@@ -1,5 +1,5 @@
 import './App.css';
-import { ChakraProvider} from "@chakra-ui/react";
+import { Alert, AlertDescription, AlertIcon, ChakraProvider} from "@chakra-ui/react";
 import Layout from './components/Layouts';
 import NavigationBar from './components/NavigationBar';
 import theme from './theme'
@@ -11,6 +11,12 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Layout>
+      <Alert status='error' wordBreak={'break-word'} maxW="100%">
+                    <AlertIcon />
+                    <AlertDescription>
+                        <b>WARNING! </b> This is a working prototype without any waranty! Use it only if you know what are you doing!
+                    </AlertDescription>
+                </Alert>
         <BrowserRouter>
           <NavigationBar>
             <AppRouter />
