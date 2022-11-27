@@ -21,8 +21,8 @@ return (
       <Route path='/minter' element={<NFTMinter/>} />
       <Route path='/browse/:chainId/:contractAddress' element={<CollectionDetails/>} />
       <Route path='/market' element={<ComingSoon/>} />
-      <Route path='/about' element={<About/>} />
-      <Route path='/team' element={<Team/>} />
+      <Route path='/about' element={<ComingSoon/>} />
+      <Route path='/team' element={<ComingSoon/>} />
     </Routes>
   </React.Suspense>
 );
