@@ -31,7 +31,6 @@ import {
   FiUsers,
   FiShoppingBag,
   FiShoppingCart,
-  FiEye,
 } from 'react-icons/fi';
 import { GiSuperMushroom } from 'react-icons/gi'
 import { IconType } from 'react-icons';
