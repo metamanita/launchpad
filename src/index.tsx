@@ -6,12 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { ColorModeScript } from '@chakra-ui/react'
 import theme from './theme';
 
-import { DAppProvider, Config, Mumbai, Polygon } from '@usedapp/core'
+import { DAppProvider, Config, Mumbai } from '@usedapp/core'
 
 const config: Config = {
   readOnlyChainId: Mumbai.chainId,
   readOnlyUrls: {
-     '9001': process.env.REACT_APP_EVMOS_MAINNET_PROVIDER as string,
+    '9001': process.env.REACT_APP_EVMOS_MAINNET_PROVIDER as string,
   },
   multicallAddresses: {
     [9001]: `0xcA11bde05977b3631167028862bE2a173976CA11`
@@ -25,11 +25,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-     <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <DAppProvider config={config}>
-        
       <App />
-      
     </DAppProvider>
   </React.StrictMode>
 );
