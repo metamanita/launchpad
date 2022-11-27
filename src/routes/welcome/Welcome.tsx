@@ -5,6 +5,7 @@ import {
   Text,
   Stack,
 } from '@chakra-ui/react';
+import FeaturesThreeColumns from './features';
 
 // import vilage from 'metamanita vilage.png'
 
@@ -23,18 +24,21 @@ export default function Welcome(Props: any) {
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
             lineHeight={'110%'}>
             Metamanita <br />
-            <Text as={'span'} color={'green.400'}>
+            <Text as={'span'}
+              color={'green.400'}
+              fontSize={{ base: 'm', sm: 'xl', md: '2xl' }}
+              fontWeight={600}>
               Permisionless NFT Launcher
             </Text>
             <Text as={'span'}
               color={'gray.400'}
-              fontSize={{ base: 'xl', sm: '1xl', md: '3xl' }}>
+              fontSize={{ base: 'sm', sm: 'm', md: 'l' }}>
               <br></br>...coming soon
             </Text>
           </Heading>
-
+          <FeaturesThreeColumns></FeaturesThreeColumns>
         </Stack>
-        <img src='mushrooms_asset_mobile.png' alt='Metamanite cards' />
+        {/* <img src='mushrooms_asset_mobile.png' alt='Metamanite cards' /> */}
       </Container>
     </>
   )
