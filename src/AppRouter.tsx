@@ -6,8 +6,7 @@ import NFTMinter from './routes/NFTMinter/NFTMinter';
 const Welcome = React.lazy(() => import('./routes/welcome/Welcome'));
 const Dashboard = React.lazy(() => import('./routes/dashboard/Dashboard'));
 const DeployCollection = React.lazy(() => import('./routes/DeployCollection'));
-const About = React.lazy(() => import('./routes/About'));
-const Team = React.lazy(() => import('./routes/Team'));
+
 
 const Loading = () => <p>Loading ...</p>;
 const AppRouter = () => {
