@@ -14,7 +14,7 @@ function App() {
       <Alert status='error' wordBreak={'break-word'} maxW="100%">
                     <AlertIcon />
                     <AlertDescription>
-                        <b>WARNING! </b> This is a working prototype without any waranty! If you know what are you doing, connect with Metamask and Evmos chain!
+                        <b>WARNING! FOR TEST ONLY.</b> This is a working prototype without any waranty! If you know what are you doing, connect with Metamask and Evmos chain!
                     </AlertDescription>
                 </Alert>
         <BrowserRouter>
