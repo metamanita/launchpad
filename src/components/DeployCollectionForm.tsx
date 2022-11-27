@@ -46,8 +46,8 @@ export default function DeployCollectionForm({ deploy }: any) {
                         <FormControl id="collection">
                         <FormLabel>Network</FormLabel>
                             <Select placeholder='Select network'>
-                                <option value='80001'>Polygon Mumbai</option>
-                                <option value='evmos_9000-4'>Evmos Testnet</option>
+                                <option disabled={true} value='80001'>Polygon Mumbai</option>
+                                <option selected={true} value='evmos_9000-4'>Evmos</option>
                             </Select>
 
                             <FormLabel>Token Name:</FormLabel>
