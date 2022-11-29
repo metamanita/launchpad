@@ -3,6 +3,7 @@ import {Routes,Route } from 'react-router-dom'
 import ComingSoon from './components/ComingSoon';
 import { CollectionDetails } from './routes/NFTMinter/CollectionDetails';
 import NFTMinter from './routes/NFTMinter/NFTMinter';
+import TheGame from './routes/theGame/TheGame';
 const Welcome = React.lazy(() => import('./routes/welcome/Welcome'));
 const Dashboard = React.lazy(() => import('./routes/dashboard/Dashboard'));
 const DeployCollection = React.lazy(() => import('./routes/DeployCollection'));
@@ -19,6 +20,7 @@ return (
       <Route path='/deploy' element={<DeployCollection/>} />
       <Route path='/minter' element={<NFTMinter/>} />
       <Route path='/browse/:chainId/:contractAddress' element={<CollectionDetails/>} />
+      <Route path='/game' element={<TheGame/>} />
       <Route path='/market' element={<ComingSoon/>} />
       <Route path='/about' element={<ComingSoon/>} />
       <Route path='/team' element={<ComingSoon/>} />
