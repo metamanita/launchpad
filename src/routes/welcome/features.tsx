@@ -1,14 +1,17 @@
 import { ReactElement } from 'react';
-import { Box, SimpleGrid, Icon, Text, Stack, Flex } from '@chakra-ui/react';
+import { Box, SimpleGrid, Icon, Text, Stack, Flex, Link, Button } from '@chakra-ui/react';
 import { FcInTransit, FcReading, FcShop } from 'react-icons/fc';
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Link as ReachLink } from 'react-router-dom'
 
 interface FeatureProps {
     title: string;
     text: string;
     icon: ReactElement;
+    richText: ReactElement;
 }
 
-const Feature = ({ title, text, icon }: FeatureProps) => {
+const Feature = ({ title, text, icon, richText }: FeatureProps) => {
     return (
         <Stack>
             <Flex
@@ -24,6 +27,7 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
             </Flex>
             <Text fontWeight={600}>{title}</Text>
             <Text color={'gray.600'}>{text}</Text>
+            {richText}
         </Stack>
     );
 };
@@ -38,6 +42,10 @@ export default function FeaturesThreeColumns() {
                     text={
                         'Mint fresh NFT drops! Permissionless! Find tallented new artists and join DAO communities.' 
                     }
+                    richText={<div>
+                        Check out the 
+                        <Link as={ReachLink} textDecoration={"underline"} color={'teal'} to='/minter'> community built collections </Link> 
+                        and mint your own</div>}
                 />
                 <Feature
                     icon={<Icon as={FcInTransit} w={10} h={10} />}
@@ -45,6 +53,10 @@ export default function FeaturesThreeColumns() {
                     text={
                         'Select from template and deploy your own collection in one simple form'
                     }
+                    richText={<div>
+                        Go to launchpad 
+                        <Link as={ReachLink} textDecoration={"underline"} color={'teal'} to='/launcher'> and launch your own </Link> 
+                        </div>}
                 />
                 <Feature
                     icon={<Icon as={FcReading} w={10} h={10} />}
@@ -52,6 +64,8 @@ export default function FeaturesThreeColumns() {
                     text={
                         'Learn everything you need to build your own NFT collections.'
                     }
+                    richText={<div>Check our <Link textDecoration={"underline"} color={'teal'} href='https://github.com/metamanita' isExternal> Github repo <ExternalLinkIcon mx='2px' /> </Link>
+                    and find dapp-boilerplate, smart contracts and sample collections</div>}
                 />
             </SimpleGrid>
         </Box>
